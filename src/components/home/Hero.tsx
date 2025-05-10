@@ -2,8 +2,19 @@ import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const Hero = () => {
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsFirstLoad(false); // After first render, disable the "first load" animation
+    }, 100); // Short timeout to ensure the flag updates quickly
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative h-screen flex items-center">
       {/* Background Image with srcset for responsive loading */}
@@ -39,16 +50,36 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div className="max-w-3xl text-white">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+        <motion.div
+          className="max-w-3xl text-white"
+          initial={isFirstLoad ? false : { opacity: 0, y: 30 }}
+          animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h1
+            className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
+            initial={isFirstLoad ? false : { opacity: 0, y: 20 }} // Disable animation on first load
+            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}  // Apply animation after first load
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             Professionele <span className="text-teal-400">Werkkleding</span> Met Uw Eigen Identiteit
-          </h1>
+          </motion.h1>
 
-          <p className="mt-6 text-xl text-slate-200 max-w-2xl">
+          <motion.p
+            className="mt-6 text-xl text-slate-200 max-w-2xl"
+            initial={isFirstLoad ? false : { opacity: 0, y: 20 }} // Disable animation on first load
+            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}  // Apply animation after first load
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             Bij SPwear leveren we hoogwaardige bedrijfskleding voor diverse sectoren.
-          </p>
+          </motion.p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <motion.div
+            className="mt-10 flex flex-wrap gap-4"
+            initial={isFirstLoad ? false : { opacity: 0, y: 20 }} // Disable animation on first load
+            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}  // Apply animation after first load
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             <Link to="/contact">
               <Button size="lg" className="flex items-center">
                 Neem Contact Op
@@ -60,7 +91,7 @@ const Hero = () => {
                 Bekijk Projecten
               </Button>
             </Link>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 
