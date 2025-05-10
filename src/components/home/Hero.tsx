@@ -17,7 +17,7 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center">
-      {/* Gebruik <picture> voor de achtergrondafbeelding */}
+      {/* Container for Background Image */}
       <div className="absolute inset-0 z-0">
         <picture className="w-full h-full">
           <source media="(max-width: 640px)" srcSet="/Webstie-background-mobile.webp" />
