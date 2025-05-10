@@ -31,7 +31,7 @@ const Hero = () => {
         <picture>
           <source
             media="(max-width: 640px)"
-            srcSet="Webstie-background-mobile.webp"
+            srcSet="Webstie-background-mobile-412x824.webp" // Nieuwe mobiele afbeelding
           />
           <source
             media="(max-width: 1024px)"
@@ -39,7 +39,7 @@ const Hero = () => {
           />
           <img
             src="Webstie-background.webp"
-            alt=""
+            alt="Professionele werkkleding"
             className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"
