@@ -2,39 +2,38 @@
 <html lang="nl">
   <head>
     <meta charset="UTF-8">
-    
-    <!-- Favicon for different devices and sizes -->
+
+    <!-- Favicon voor verschillende apparaten en formaten -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
     
-    <!-- Apple touch icon (for iOS devices) -->
+    <!-- Apple touch icon (voor iOS-apparaten) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     
-    <!-- Web manifest (for PWA support) -->
+    <!-- Web manifest (voor PWA-ondersteuning) -->
     <link rel="manifest" href="/site.webmanifest">
     
-    <!-- Meta tags for SEO and social sharing -->
+    <!-- Meta tags voor SEO en social sharing -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ontdek hoogwaardige, gepersonaliseerde werkkleding voor diverse sectoren. SPwear biedt scherpe prijzen en uitstekende service.">
     
-    <!-- Performance optimized meta tags -->
+    <!-- Preconnect voor fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- Preload kritieke middelen (afbeeldingen) -->
     <link rel="preload" href="/Webstie-background.webp" as="image" type="image/webp">
     <link rel="preload" href="/SPwearcopy.png" as="image" type="image/png">
-
-    <!-- Preload the Inter fonts (optional if you're using local fonts) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-
-    <!-- Link to the custom fonts CSS (if you're using local fonts) -->
+    
+    <!-- Preload belangrijke fonts -->
+    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+    <!-- Koppeling naar de custom fonts CSS -->
     <link rel="stylesheet" href="/fonts.css">
-
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.spwear.nl/">
@@ -53,101 +52,6 @@
   </head>
   <body>
     <div id="root"></div>
-
     <script type="module" src="/src/main.tsx" defer></script>
-
-    <!-- Background Image with srcset for responsive loading -->
-    <section class="relative h-screen flex items-center">
-      <div
-        class="absolute inset-0 bg-cover bg-center z-0"
-        style={{
-          backgroundImage: "url('Webstie-background.webp')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-        role="img"
-        aria-label="Professionele bedrukte werkkleding van SPwear - Specialisten in maatwerk bedrijfskleding"
-      >
-        <picture>
-          <source
-            media="(max-width: 640px)"
-            srcset="Webstie-background-mobile.webp"
-          />
-          <source
-            media="(max-width: 1024px)"
-            srcset="Webstie-background-tablet.webp"
-          />
-          <img
-            src="Webstie-background.webp"
-            alt="Professional workwear"
-            class="absolute inset-0 w-full h-full object-cover"
-            loading="eager"
-            fetchPriority="high"
-          />
-        </picture>
-        <div class="absolute inset-0 hero-overlay"></div>
-      </div>
-
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          className="max-w-3xl text-white"
-          initial={isFirstLoad ? false : { opacity: 0, y: 30 }}
-          animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.h1
-            class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
-            initial={isFirstLoad ? false : { opacity: 0, y: 20 }}
-            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            Professionele <span class="text-teal-400">Werkkleding</span> Met Uw Eigen Identiteit
-          </motion.h1>
-
-          <motion.p
-            class="mt-6 text-xl text-slate-200 max-w-2xl"
-            initial={isFirstLoad ? false : { opacity: 0, y: 20 }}
-            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            Bij SPwear leveren we hoogwaardige bedrijfskleding voor diverse sectoren.
-          </motion.p>
-
-          <motion.div
-            class="mt-10 flex flex-wrap gap-4"
-            initial={isFirstLoad ? false : { opacity: 0, y: 20 }}
-            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <Link to="/contact">
-              <Button size="lg" class="flex items-center">
-                Neem Contact Op
-                <ArrowRight class="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link to="/projecten">
-              <Button variant="outline" size="lg">
-                Bekijk Projecten
-              </Button>
-            </Link>
-          </motion.div>
-        </motion.div>
-      </div>
-
-      <!-- Scroll Indicator -->
-      <motion.div
-        class="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{
-          opacity: { duration: 1, delay: 1 },
-          y: { repeat: Infinity, duration: 1.5, ease: 'easeInOut', delay: 1 },
-        }}
-      >
-        <div class="w-6 h-9 border-2 border-white rounded-full flex justify-center">
-          <div class="w-1 h-2 bg-white rounded-full mt-2 animate-bounce"></div>
-        </div>
-      </motion.div>
-    </section>
   </body>
 </html>
