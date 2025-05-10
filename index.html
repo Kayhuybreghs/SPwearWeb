@@ -10,58 +10,33 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Preconnect voor fonts -->
+    <!-- Preconnect to critical domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload afbeeldingen -->
-    <link rel="preload" href="/Webstie-background.webp" as="image" type="image/webp" media="(min-width: 769px)">
-    <link rel="preload" href="/Webstie-background-mobile.webp" as="image" type="image/webp" media="(max-width: 768px)">
-    <link rel="preload" href="/SPwearcopy.png" as="image" type="image/png">
+    <!-- Critical CSS inlined for above-the-fold content -->
+    <style>
+      html, body { margin:0; padding:0; }
+      .hero-overlay { background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)); }
+      h1 { font-family: 'Inter', sans-serif; font-size: 2.5rem; line-height: 1.1; font-weight:700; }
+    </style>
 
-    <!-- Preload fonts -->
-    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- Preload main hero image and fonts -->
+    <link rel="preload" href="/Webstie-background-1024w.webp" as="image" type="image/webp">
+    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- Fonts CSS (asynchroon laden) -->
+    <!-- Async CSS -->
     <link rel="preload" href="/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/fonts.css"></noscript>
-
-    <!-- App CSS (asynchroon laden) -->
     <link rel="preload" href="/assets/index-BPqZ0qhn.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/index-BPqZ0qhn.css"></noscript>
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.spwear.nl/">
-    <meta property="og:title" content="SPwear – Bedrukte Werkkleding van Hoge Kwaliteit">
-    <meta property="og:description" content="Specialist in bedrukte werkkleding voor bedrijven. Maatwerk, topkwaliteit en scherpe prijzen voor elke sector.">
-    <meta property="og:image" content="OGPicture.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.spwear.nl/">
-    <meta property="twitter:title" content="SPwear – Bedrukte Werkkleding van Hoge Kwaliteit">
-    <meta property="twitter:description" content="Specialist in bedrukte werkkleding voor bedrijven. Maatwerk, topkwaliteit en scherpe prijzen voor elke sector.">
-    <meta property="twitter:image" content="OGPicture.png">
   </head>
 
   <body>
-    <!-- Responsive achtergrondafbeelding via <picture> -->
-    <picture>
-      <source srcset="/Webstie-background-mobile.webp" media="(max-width: 768px)" type="image/webp">
-      <source srcset="/Webstie-background.webp" media="(min-width: 769px)" type="image/webp">
-      <img src="/Webstie-background.webp" alt="Achtergrondafbeelding" style="display: none;">
-    </picture>
-
+    <!-- Hero section loads immediately with high-priority <img> -->
     <div id="root"></div>
-
-    <!-- JS -->
     <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>
