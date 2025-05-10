@@ -4,39 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ontdek hoogwaardige, gepersonaliseerde werkkleding voor diverse sectoren. SPwear biedt scherpe prijzen en uitstekende service.">
-
     <title>SPwear – Bedrukte Werkkleding van Hoge Kwaliteit</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 
-    <!-- Preconnect to critical domains -->
+    <!-- Preconnect naar Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Critical CSS inlined for above-the-fold content -->
+    <!-- Inline critical CSS voor H1 en basis reset -->
     <style>
-      html, body { margin:0; padding:0; }
-      .hero-overlay { background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)); }
-      h1 { font-family: 'Inter', sans-serif; font-size: 2.5rem; line-height: 1.1; font-weight:700; }
+      html, body { margin: 0; padding: 0; }
+      h1 {
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 2.25rem; /* Tailwind text-4xl */
+        line-height: 1.1;
+        font-weight: 700;
+      }
     </style>
 
-    <!-- Preload main hero image and fonts -->
-    <link rel="preload" href="/Webstie-background-1024w.webp" as="image" type="image/webp">
+    <!-- Preload én font-display swapable fonts -->
     <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- Async CSS -->
+    <!-- Async-load fonts.css -->
     <link rel="preload" href="/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/fonts.css"></noscript>
+
+    <!-- Async-load main CSS -->
     <link rel="preload" href="/assets/index-BPqZ0qhn.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/index-BPqZ0qhn.css"></noscript>
   </head>
 
   <body>
-    <!-- Hero section loads immediately with high-priority <img> -->
+    <!-- Hero achtergrond via <picture> -->
+    <picture>
+      <source srcset="/Webstie-background-mobile.webp" media="(max-width: 768px)" type="image/webp">
+      <source srcset="/Webstie-background.webp" media="(min-width: 769px)" type="image/webp">
+      <img
+        src="/Webstie-background.webp"
+        alt="Achtergrondafbeelding"
+        style="width:100%;height:auto;display:block;"
+        loading="eager"
+        fetchPriority="high"
+        width="1920"
+        height="1080"
+      >
+    </picture>
+
     <div id="root"></div>
+
+    <!-- JavaScript -->
     <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>
