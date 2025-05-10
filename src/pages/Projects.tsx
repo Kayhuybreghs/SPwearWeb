@@ -229,10 +229,10 @@ const Projects = () => {
           >
             <div className="grid md:grid-cols-2 items-center">
   <div className="p-8">
-    <h2 className="text-3xl font-bold text-slate-100 mb-4">
+    <h2 className="text-3xl font-bold text-slate-800 mb-4">
       Ga de zomer tot aan de winter goed in met SPwear bedrukte kleding
     </h2>
-    <p className="text-lg text-slate-300">
+    <p className="text-lg text-slate-600">
       Van lichte zomershirts tot warme winterjassen - wij zorgen voor de perfecte bedrukte kleding voor elk seizoen.
     </p>
   </div>
@@ -244,6 +244,7 @@ const Projects = () => {
     />
   </div>
 </div>
+
           </motion.div>
 
           {/* FAQ Section */}
