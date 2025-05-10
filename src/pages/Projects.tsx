@@ -228,22 +228,23 @@ const Projects = () => {
             viewport={{ once: true }}
           >
             <div className="grid md:grid-cols-2 items-center">
-              <div className="p-8">
-                <h2 className="text-3xl font-bold text-slate-800 mb-4">
-                  Ga de zomer tot aan de winter goed in met SPwear bedrukte kleding
-                </h2>
-                <p className="text-lg text-slate-600">
-                  Van lichte zomershirts tot warme winterjassen - wij zorgen voor de perfecte bedrukte kleding voor elk seizoen.
-                </p>
-              </div>
-              <div className="h-full flex justify-center items-center p-8 bg-gradient-to-r from-teal-500 to-teal-600">
-                <img 
-                  src="/SPwearcopy.png" 
-                  alt="SPwear Logo" 
-                  className="h-20 w-auto"
-                />
-              </div>
-            </div>
+  <div className="p-8">
+    <h2 className="text-3xl font-bold text-slate-800 mb-4">
+      Ga de zomer tot aan de winter goed in met SPwear bedrukte kleding
+    </h2>
+    <p className="text-lg text-slate-600">
+      Van lichte zomershirts tot warme winterjassen - wij zorgen voor de perfecte bedrukte kleding voor elk seizoen.
+    </p>
+  </div>
+  <div className="h-full flex justify-center items-center p-8 bg-gradient-to-r from-gray-300 to-gray-700">
+    <img 
+      src="/SPwearcopy.png" 
+      alt="SPwear Logo" 
+      className="h-20 w-auto"
+    />
+  </div>
+</div>
+
           </motion.div>
 
           {/* FAQ Section */}
