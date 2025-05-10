@@ -51,10 +51,27 @@
 
     <!-- Inline Critical CSS (minified) -->
     <style>
-      /* Include only critical CSS that is needed for above-the-fold content */
-      body { font-family: 'Inter', sans-serif; }
-      h1 { font-size: 2rem; }
-      /* Add other critical styles here */
+      /* Critical CSS for above-the-fold content */
+      body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+      h1 { font-size: 2rem; font-weight: bold; }
+      .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+      .header { display: flex; justify-content: space-between; align-items: center; }
+      .button { background-color: #007bff; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; }
+      /* More critical styles for initial render */
+    </style>
+
+    <!-- Web Font Optimization (font-display: swap) -->
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        src: url('/fonts/Inter-Regular.woff2') format('woff2');
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Inter';
+        src: url('/fonts/Inter-Bold.woff2') format('woff2');
+        font-display: swap;
+      }
     </style>
 
   </head>
@@ -71,5 +88,8 @@
 
     <!-- JS -->
     <script type="module" src="/src/main.tsx" defer></script>
+    
+    <!-- Non-Critical JS (async) -->
+    <script src="path/to/non-critical.js" async></script>
   </body>
 </html>
