@@ -4,6 +4,13 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+/**
+ * Hero component voor de homepage.
+ * Optimalisaties voor LCP:
+ * - Eager loading met fetchPriority voor de hero-afbeelding
+ * - <picture> met verschillende resoluties
+ * - Statische <h1> zonder extra JavaScript in de eerste weergave
+ */
 const Hero = () => {
   const [isFirstLoad, setIsFirstLoad] = useState(true);
 
@@ -14,13 +21,13 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center overflow-hidden">
-      {/* High-priority <img> with width/height and fetchPriority */}
+      {/* Hero-afbeelding met hoge prioriteit */}
       <picture>
-        <source media="(max-width: 768px)" srcSet="/Webstie-background-mobile-640w.webp" />
+        <source media="(max-width: 640px)" srcSet="/Webstie-background-mobile-640w.webp" />
         <source media="(max-width: 1024px)" srcSet="/Webstie-background-tablet-1024w.webp" />
         <img
           src="/Webstie-background-1920w.webp"
-          alt="Professionele werkkleding"
+          alt="Professionele bedrukte werkkleding van SPwear"
           className="absolute inset-0 w-full h-full object-cover z-0"
           loading="eager"
           fetchPriority="high"
@@ -28,8 +35,11 @@ const Hero = () => {
           height={1080}
         />
       </picture>
-      <div className="absolute inset-0 hero-overlay z-10"></div>
 
+      {/* Overlay */}
+      <div className="absolute inset-0 hero-overlay z-10" aria-hidden="true"></div>
+
+      {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <motion.div
           className="max-w-3xl text-white"
@@ -37,8 +47,7 @@ const Hero = () => {
           animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Static H1 for LCP optimization */}
-          <h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
             Professionele <span className="text-teal-400">Werkkleding</span> Met Uw Eigen Identiteit
           </h1>
 
@@ -74,3 +83,5 @@ const Hero = () => {
     </section>
   );
 };
+
+export default Hero;
