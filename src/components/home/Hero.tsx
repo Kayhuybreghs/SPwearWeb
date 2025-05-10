@@ -17,18 +17,20 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center">
-      {/* Gebruik alleen <picture> voor de achtergrondafbeelding */}
-      <picture className="absolute inset-0 z-0">
-        <source media="(max-width: 640px)" srcSet="/Webstie-background-mobile.webp" />
-        <source media="(max-width: 1024px)" srcSet="/Webstie-background-tablet.webp" />
-        <img
-          src="/Webstie-background.webp"
-          alt="Achtergrondafbeelding van SPwear werkkleding"
-          className="w-full h-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-        />
-      </picture>
+      {/* Gebruik <picture> voor de achtergrondafbeelding */}
+      <div className="absolute inset-0 z-0">
+        <picture className="w-full h-full">
+          <source media="(max-width: 640px)" srcSet="/Webstie-background-mobile.webp" />
+          <source media="(max-width: 1024px)" srcSet="/Webstie-background-tablet.webp" />
+          <img
+            src="/Webstie-background.webp"
+            alt="Achtergrondafbeelding van SPwear werkkleding"
+            className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </picture>
+      </div>
 
       {/* Overlay voor visueel effect */}
       <div className="absolute inset-0 hero-overlay"></div>
