@@ -1,75 +1,70 @@
 <!doctype html>
 <html lang="nl">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ontdek hoogwaardige, gepersonaliseerde werkkleding voor diverse sectoren. SPwear biedt scherpe prijzen en uitstekende service." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ontdek hoogwaardige, gepersonaliseerde werkkleding voor diverse sectoren. SPwear biedt scherpe prijzen en uitstekende service.">
     <title>SPwear – Bedrukte Werkkleding van Hoge Kwaliteit</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Preconnect for Google Fonts (if used in future) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Preload images -->
-    <link rel="preload" href="/Webstie-background.webp" as="image" type="image/webp" media="(min-width: 769px)" />
-    <link rel="preload" href="/Webstie-background-mobile.webp" as="image" type="image/webp" media="(max-width: 768px)" />
-    <link rel="preload" href="/SPwearcopy.png" as="image" type="image/png" />
+    <link rel="preload" href="/Webstie-background.webp" as="image" type="image/webp" media="(min-width: 769px)">
+    <link rel="preload" href="/Webstie-background-mobile.webp" as="image" type="image/webp" media="(max-width: 768px)">
+    <link rel="preload" href="/SPwearcopy.png" as="image" type="image/png">
 
     <!-- Preload fonts -->
-    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-    <!-- ✅ Fonts CSS (now loaded immediately to fix missing fonts on first paint) -->
-    <link rel="stylesheet" href="/fonts.css" />
+    <!-- Fonts CSS (asynchronously load) -->
+    <link rel="preload" href="/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/fonts.css"></noscript>
 
-    <!-- App CSS (still lazy-loaded for performance) -->
-    <link rel="preload" href="/assets/index-BPqZ0qhn.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="/assets/index-BPqZ0qhn.css" /></noscript>
+    <!-- App CSS (asynchronously load) -->
+    <link rel="preload" href="/assets/index-BPqZ0qhn.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/index-BPqZ0qhn.css"></noscript>
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.spwear.nl/" />
-    <meta property="og:title" content="SPwear – Bedrukte Werkkleding van Hoge Kwaliteit" />
-    <meta property="og:description" content="Specialist in bedrukte werkkleding voor bedrijven. Maatwerk, topkwaliteit en scherpe prijzen voor elke sector." />
-    <meta property="og:image" content="OGPicture.png" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.spwear.nl/">
+    <meta property="og:title" content="SPwear – Bedrukte Werkkleding van Hoge Kwaliteit">
+    <meta property="og:description" content="Specialist in bedrukte werkkleding voor bedrijven. Maatwerk, topkwaliteit en scherpe prijzen voor elke sector.">
+    <meta property="og:image" content="OGPicture.png">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.spwear.nl/" />
-    <meta property="twitter:title" content="SPwear – Bedrukte Werkkleding van Hoge Kwaliteit" />
-    <meta property="twitter:description" content="Specialist in bedrukte werkkleding voor bedrijven. Maatwerk, topkwaliteit en scherpe prijzen voor elke sector." />
-    <meta property="twitter:image" content="OGPicture.png" />
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.spwear.nl/">
+    <meta property="twitter:title" content="SPwear – Bedrukte Werkkleding van Hoge Kwaliteit">
+    <meta property="twitter:description" content="Specialist in bedrukte werkkleding voor bedrijven. Maatwerk, topkwaliteit en scherpe prijzen voor elke sector.">
+    <meta property="twitter:image" content="OGPicture.png">
 
-    <!-- Inline Critical CSS -->
+    <!-- Inline Critical CSS (minified) -->
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-      }
-      h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        margin: 0;
-      }
+      /* Include only critical CSS that is needed for above-the-fold content */
+      body { font-family: 'Inter', sans-serif; }
+      h1 { font-size: 2rem; }
+      /* Add other critical styles here */
     </style>
+
   </head>
 
   <body>
-    <!-- Responsive background image -->
+    <!-- Responsive Background Image via <picture> -->
     <picture>
-      <source srcset="/Webstie-background-mobile.webp" media="(max-width: 768px)" type="image/webp" />
-      <source srcset="/Webstie-background.webp" media="(min-width: 769px)" type="image/webp" />
-      <img src="/Webstie-background.webp" alt="Achtergrondafbeelding" style="display: none;" loading="lazy" />
+      <source srcset="/Webstie-background-mobile.webp" media="(max-width: 768px)" type="image/webp">
+      <source srcset="/Webstie-background.webp" media="(min-width: 769px)" type="image/webp">
+      <img src="/Webstie-background.webp" alt="Achtergrondafbeelding" style="display: none;" loading="lazy">
     </picture>
 
     <div id="root"></div>
