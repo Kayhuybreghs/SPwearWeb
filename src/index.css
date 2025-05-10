@@ -1,0 +1,78 @@
+/* Tailwind base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global font smoothing */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif; /* Set Inter font globally */
+}
+
+/* Body font */
+body {
+  font-family: 'Inter', sans-serif; /* Ensure body uses Inter */
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button and link interaction */
+button,
+a {
+  touch-action: manipulation;
+}
+
+/* Focus outline */
+:focus {
+  outline: 2px solid #0D9488;
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #0D9488;
+  outline-offset: 2px;
+}
+
+/* Navigation link animations */
+.nav-link::after,
+.mobile-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #14b8a6;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after,
+.mobile-nav-link:hover::after,
+.mobile-nav-link.active::after {
+  width: 100%;
+}
+
+/* Section heading animations */
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #14b8a6;
+  transition: width 0.3s ease;
+}
+
+.section-heading:hover::after {
+  width: 100%;
+}
