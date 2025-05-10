@@ -26,7 +26,9 @@
     <!-- Preload kritieke middelen (afbeeldingen) -->
     <link rel="preload" href="/Webstie-background.webp" as="image" type="image/webp">
     <link rel="preload" href="/SPwearcopy.png" as="image" type="image/png">
-    
+    <!-- Preload mobiele achtergrondafbeelding voor sneller laden op mobiele apparaten -->
+    <link rel="preload" href="/Webstie-background-mobile.webp" as="image" type="image/webp">
+
     <!-- Preload belangrijke fonts -->
     <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -53,5 +55,12 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx" defer></script>
+
+    <!-- Responsive images for background -->
+    <picture>
+      <source media="(max-width: 640px)" srcset="/Webstie-background-mobile.webp">
+      <source media="(max-width: 1024px)" srcset="/Webstie-background-tablet.webp">
+      <img src="/Webstie-background.webp" alt="Background Image" class="absolute inset-0 w-full h-full object-cover" loading="eager" fetchpriority="high">
+    </picture>
   </body>
 </html>
