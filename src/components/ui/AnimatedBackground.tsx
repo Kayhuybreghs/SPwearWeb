@@ -6,7 +6,7 @@ const AnimatedBackground = () => {
         position: 'fixed',
         inset: '0',
         zIndex: -1,
-        background: 'linear-gradient(135deg, #d0d0d0 0%, #a0a0a0 60%, #4a4a4a 100%)', // Light grey to medium-dark
+        background: 'linear-gradient(135deg, #ffffff 0%, #f2faff 60%, #cce8ff 100%)', // More white, then subtle blue
         pointerEvents: 'none',
       }}
     />
