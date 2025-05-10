@@ -17,36 +17,21 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center">
-      {/* Background Image with srcset for responsive loading */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{
-          backgroundImage: "url('Webstie-background.webp')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-        role="img"
-        aria-label="Professionele bedrukte werkkleding van SPwear - Specialisten in maatwerk bedrijfskleding"
-      >
-        <picture>
-          <source
-            media="(max-width: 640px)"
-            srcSet="Webstie-background-mobile.webp"
-          />
-          <source
-            media="(max-width: 1024px)"
-            srcSet="Webstie-background-tablet.webp"
-          />
-          <img
-            src="Webstie-background.webp"
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="eager"
-            fetchPriority="high"
-          />
-        </picture>
-        <div className="absolute inset-0 hero-overlay"></div>
-      </div>
+      {/* Gebruik alleen <picture> voor de achtergrondafbeelding */}
+      <picture className="absolute inset-0 z-0">
+        <source media="(max-width: 640px)" srcSet="/Webstie-background-mobile.webp" />
+        <source media="(max-width: 1024px)" srcSet="/Webstie-background-tablet.webp" />
+        <img
+          src="/Webstie-background.webp"
+          alt="Achtergrondafbeelding van SPwear werkkleding"
+          className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+        />
+      </picture>
+
+      {/* Overlay voor visueel effect */}
+      <div className="absolute inset-0 hero-overlay"></div>
 
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -58,8 +43,8 @@ const Hero = () => {
         >
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
-            initial={isFirstLoad ? false : { opacity: 0, y: 20 }} // Disable animation on first load
-            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}  // Apply animation after first load
+            initial={isFirstLoad ? false : { opacity: 0, y: 20 }}
+            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             Professionele <span className="text-teal-400">Werkkleding</span> Met Uw Eigen Identiteit
@@ -67,8 +52,8 @@ const Hero = () => {
 
           <motion.p
             className="mt-6 text-xl text-slate-200 max-w-2xl"
-            initial={isFirstLoad ? false : { opacity: 0, y: 20 }} // Disable animation on first load
-            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}  // Apply animation after first load
+            initial={isFirstLoad ? false : { opacity: 0, y: 20 }}
+            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             Bij SPwear leveren we hoogwaardige bedrijfskleding voor diverse sectoren.
@@ -76,8 +61,8 @@ const Hero = () => {
 
           <motion.div
             className="mt-10 flex flex-wrap gap-4"
-            initial={isFirstLoad ? false : { opacity: 0, y: 20 }} // Disable animation on first load
-            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}  // Apply animation after first load
+            initial={isFirstLoad ? false : { opacity: 0, y: 20 }}
+            animate={isFirstLoad ? {} : { opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <Link to="/contact">
