@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -19,7 +20,7 @@ const Hero = () => {
         <picture>
           <source
             media="(max-width: 640px)"
-            srcSet="Webstie-background-mobile-412x824.webp"
+            srcSet="Webstie-background-mobile-412x824.webp" // Nieuwe mobiele afbeelding
           />
           <source
             media="(max-width: 1024px)"
@@ -38,7 +39,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl text-white">
+        <motion.div className="max-w-3xl text-white">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
             Professionele <span className="text-teal-400">Werkkleding</span> Met Uw Eigen Identiteit
           </h1>
@@ -60,15 +61,23 @@ const Hero = () => {
               </Button>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{
+          opacity: { duration: 1, delay: 1 },
+          y: { repeat: Infinity, duration: 1.5, ease: 'easeInOut', delay: 1 },
+        }}
+      >
         <div className="w-6 h-9 border-2 border-white rounded-full flex justify-center">
           <div className="w-1 h-2 bg-white rounded-full mt-2 animate-bounce"></div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
