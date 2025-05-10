@@ -1,42 +1,26 @@
-<!doctype html>
-<html lang="nl">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ontdek hoogwaardige, gepersonaliseerde werkkleding voor diverse sectoren. SPwear biedt scherpe prijzen en uitstekende service.">
+<head>
+  <!-- … je bestaande meta’s en preconnects … -->
 
-    <title>SPwear – Bedrukte Werkkleding van Hoge Kwaliteit</title>
+  <!-- Inline critical CSS voor H1 en body -->
+  <style>
+    html, body { margin:0; padding:0; }
+    h1 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 2.25rem;   /* komt overeen met Tailwind text-4xl */
+      line-height: 1.1;
+      font-weight: 700;
+    }
+  </style>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <!-- Preload én swapable fonts -->
+  <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Inter-Bold.woff2"    as="font" type="font/woff2" crossorigin>
 
-    <!-- Preconnect to critical domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Async-load Tailwind + je eigen CSS -->
+  <link rel="preload" href="/fonts.css"           as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/fonts.css"></noscript>
+  <link rel="preload" href="/assets/index-BPqZ0qhn.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/index-BPqZ0qhn.css"></noscript>
 
-    <!-- Critical CSS inlined for above-the-fold content -->
-    <style>
-      html, body { margin:0; padding:0; }
-      .hero-overlay { background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)); }
-      h1 { font-family: 'Inter', sans-serif; font-size: 2.5rem; line-height: 1.1; font-weight:700; }
-    </style>
-
-    <!-- Preload main hero image and fonts -->
-    <link rel="preload" href="/Webstie-background-1024w.webp" as="image" type="image/webp">
-    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- Async CSS -->
-    <link rel="preload" href="/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/fonts.css"></noscript>
-    <link rel="preload" href="/assets/index-BPqZ0qhn.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/index-BPqZ0qhn.css"></noscript>
-  </head>
-
-  <body>
-    <!-- Hero section loads immediately with high-priority <img> -->
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx" defer></script>
-  </body>
-</html>
+  <!-- … rest van head … -->
+</head>
