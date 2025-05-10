@@ -1,15 +1,43 @@
-/* public/fonts.css */
-
-/* Global ligatures en eventuele extra font-features */
+/* Global font settings */
 body {
+  font-family: 'Inter', sans-serif;
   font-variant-ligatures: common-ligatures;
+  line-height: 1.6;
 }
 
-/* Optional: extra utilities als je die buiten Tailwind om wilt */
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+h2, h3, h4 {
+  font-weight: 600;
+}
+
+/* Text helpers */
+.prose-container {
+  line-height: 1.7;
+  max-width: 65ch;
+}
+
+/* Utilities for font features */
 .text-fancy {
   font-feature-settings: 'liga' on, 'clig' on;
   font-variation-settings: 'wght' 500;
 }
 
-/* Je kunt hier eventueel extra @layer utilities definiëren,
-   maar Tailwind dekt de meeste needs via classes. */
+/* Responsive typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Adjustments for better readability */
+p {
+  font-size: 1rem;
+  color: #333;
+}
