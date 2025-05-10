@@ -49,84 +49,9 @@
     <meta property="twitter:image" content="OGPicture.png">
 
     <title>SPwear – Bedrukte Werkkleding van Hoge Kwaliteit</title>
-
-    <!-- Inline style for font display strategy -->
-    <style>
-      @font-face {
-        font-family: 'Inter';
-        src: url('/fonts/Inter-Regular.woff2') format('woff2');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap; /* Ensures text is visible while font is loading */
-      }
-
-      @font-face {
-        font-family: 'Inter';
-        src: url('/fonts/Inter-Bold.woff2') format('woff2');
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-      }
-    </style>
   </head>
   <body>
-    <!-- Hero section with responsive images for LCP -->
-    <section class="relative h-screen flex items-center">
-      <div
-        class="absolute inset-0 bg-cover bg-center z-0"
-        style="background-image: url('Webstie-background.webp'); background-size: cover; background-position: center;"
-        role="img"
-        aria-label="Professionele bedrukte werkkleding van SPwear - Specialisten in maatwerk bedrijfskleding"
-      >
-        <picture>
-          <source media="(max-width: 640px)" srcset="Webstie-background-mobile.webp" />
-          <source media="(max-width: 1024px)" srcset="Webstie-background-tablet.webp" />
-          <img
-            src="Webstie-background.webp"
-            alt="Professional workwear"
-            class="absolute inset-0 w-full h-full object-cover"
-            loading="eager"
-            fetchPriority="high" <!-- Ensures image is prioritized for LCP -->
-          />
-        </picture>
-        <div class="absolute inset-0 hero-overlay"></div>
-      </div>
-
-      <!-- Content inside the hero section -->
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="max-w-3xl text-white">
-          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-            Professionele <span class="text-teal-400">Werkkleding</span> Met Uw Eigen Identiteit
-          </h1>
-
-          <p class="mt-6 text-xl text-slate-200 max-w-2xl">
-            Bij SPwear leveren we hoogwaardige bedrijfskleding voor diverse sectoren.
-          </p>
-
-          <div class="mt-10 flex flex-wrap gap-4">
-            <a href="/contact">
-              <button class="flex items-center text-lg px-4 py-2 bg-teal-400 text-white rounded">
-                Neem Contact Op
-              </button>
-            </a>
-            <a href="/projecten">
-              <button class="text-lg px-4 py-2 border-2 border-teal-400 text-teal-400 rounded">
-                Bekijk Projecten
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scroll Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div class="w-6 h-9 border-2 border-white rounded-full flex justify-center">
-          <div class="w-1 h-2 bg-white rounded-full mt-2 animate-bounce"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Defer non-critical JavaScript -->
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>
